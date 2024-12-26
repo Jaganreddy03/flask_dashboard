@@ -1,0 +1,64 @@
+#charts { 
+    display: grid;
+    grid-template-columns: 1fr; /* Single graph per row */
+    gap: 10px; /* Provide spacing between graphs */
+    margin: 5px;
+    justify-content: center;
+}
+
+.chart-container {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 90%; /* Responsive width for mobile screens */
+    max-width: 360px; /* Ensure it fits within mobile screen dimensions */
+    aspect-ratio: 9 / 16; /* Maintains a mobile phone-like aspect ratio */
+    height: auto; /* Allow height to adjust dynamically */
+}
+
+canvas {
+    width: 100% !important; /* Take full container width */
+    height: 100% !important; /* Maintain aspect ratio */
+}
+
+/* Rest of your existing CSS remains the same */
+
+h3 {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px; /* Font size suitable for mobile */
+    text-align: center; /* Center align the title */
+}
+
+.error-message {
+    color: #dc3545;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #charts {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    .chart-container {
+        width: 100%; /* Take full width of the viewport */
+        max-width: 360px;
+    }
+}
+
+.leaflet-popup-content {
+    margin: 8px;
+    font-family: inherit;
+    font-size: 12px; /* Smaller font for popup */
+}
+
+.leaflet-popup-content b {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
